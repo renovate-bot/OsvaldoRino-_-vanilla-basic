@@ -33,7 +33,7 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     - name: Upload HTML report as Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       env:
           TAG_NAME: test-report-${{ steps.date.outputs.date }}
       if: always()
