@@ -33,7 +33,7 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     - name: Upload HTML report as Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       env:
           TAG_NAME: test-report-${{ steps.date.outputs.date }}
       if: always()
@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download all workflow run artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       id: download
     - name: Publish to external repo
       if: always()
